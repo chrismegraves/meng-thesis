@@ -1,27 +1,32 @@
-% This is an example of how you would use tgrind to include an example
-% of source code; it is commented out in this template since the code
-% example file does not exist.  To use it, you need to remove the '%' on the
-% beginning of the line, and insert your own information in the call.
-%
-%\tagrind[htbp]{code/pmn.s.tex}{Post Multiply Normalization}{opt:pmn}
-
-% This is an example of how you would use tgrind to include an example
-% of source code; it is commented out in this template since the code
-% example file does not exist.  To use it, you need to remove the '%' on the
-% beginning of the line, and insert your own information in the call.
-%
-%\tgrind[htbp]{code/be.s.tex}{Block Exponent}{opt:be}
-
-
-
-
 \chapter{Introduction} 
 \section{Introduction to Scratch}
-\subsection{Scratch Programming Environment}
-\subsection{Introducing Tablet Scratch}
-\section{Motivation}
-\section{Touch Interactivity in Scratch}
-\section{Thesis Overview}
+Designed and developed by the Lifelong Kindergarten Group at the MIT Media Lab, Scratch is a graphical, drag-and-drop programming language and environment that allows users of all ages and educational backgrounds (but school-aged children in particular) to easily make and share their own stories, games, and animations\cite{ProgrammingForAll, Monroy-Hernandez}. Scratch was first formally proposed in 2003 as a tool to help young children gain technological fluency, allowing them to use code to express themselves and manifest their imaginations \cite{ScratchProposal}. Since being released to the public in 2007, over 3 million registered users have collectively created and shared well over 5 million projects \cite{ScratchStats} ranging from simple animated cards for Mother's Day to complex, interactive physical simulations. Activity in Scratch grew dramatically in the year following the public release of Scratch 2.0 in May 2013, which allowed Scratch users to develop their projects directly in the browser rather than having to download a separate Scratch development application. 
 
+Scratch users, or \emph{Scratchers} as they are called within the community, make their programs by organizing and connecting various blocks, each representing a command, a value, or a piece of logic. After making their projects, Scratchers can easily share their creations on the Scratch website for other Scratchers to play with, comment on, and remix. There are also forums where Scratchers can share ideas, help one other, and even just hang out.
+
+\subsection{Constructionist Learning and Scratch}
+The design and motivation behind Scratch are deeply influenced by Seymour Papert's contributions to the theory of constructionist learning \cite{Papert}. There are two main ideas behind the theory of constructionist learning, or ``constructionism," as it is also known. The first idea is that it is best to think of learning as the process of the learner constructing ideas for themselves rather than simply as the transfer of knowledge from teacher to learner. The second idea is that learning is most effective when it centers around activities where the learners are creating products that are personally meaningful to them.
+
+During the advent of personal computing, Papert saw the computer as a tool that could be used to easily allow children to create, explore, and learn through constructionism. In the late 1960's, Papert used the ideas  of constructionism to create the educational programming language Logo, which he intended as a virtual math land in which children could concretely play with mathematical sentences and see the results. One of the most important ideas introduced by Logo was the metaphor of keeping \emph{low floors} and \emph{high ceilings}. Logo can be described as having a low floor in the sense that is easy for new Logo users to step into it, start exploring, and make simple projects. Similarly, Logo can be described as having a high ceiling because more experienced users can continue to use Logo to make more complex and sophisticated projects, that is to say ``the sky is the limit."
+
+Inspired by Logo, Scratch was also designed with the concept of keeping low floors and high ceilings. Unlike Logo, however, Scratch deemphasizes high ceilings in favor of placing higher priority on \emph{wide walls} \cite{Reflections}. While Logo users were almost entirely limited to making drawings and patterns, Scratchers can make all kinds of projects ranging from games to physical simulations to interactive stories. Also, Scratchers can upload their own graphics and music to even further personalize their projects. Children with a wide range of backgrounds and interests use Scratch to work on projects that are aligned with their individual passions.
+
+\subsection{Introducing Tablet Scratch}
+Since 2010, there has been a massive proliferation of tablet computers. Tablets are currently being used for purposes ranging from ordering sandwiches to guiding museum goers to everything in between. Recently there have been a number of large-scale initiatives to use tablets for the purpose of educating children. While these initiatives are admirable, for the most part they are centered on using tablets to provide students with access to books, videos, and simple exercises. More simply put, these initiatives generally focus on using these tablets for consumption rather than creation. This focus reflects the fact that most people today mainly use tablets for consuming news, videos, and emails.
+
+However, the makers of Scratch believe that children (and people in general) learn most effectively through an iterative process of designing, creating, experimenting, and exploring. As a result of this belief, in combination with these aforementioned initiatives, the Scratch team decided to provide children with a tablet application that they can use to create personalized stories, games, and animations directly on the tablet. To do so, the Scratch team decided to create Tablet Scratch, a tablet-specific version of Scratch to come out in late 2014. With Tablet Scratch, the Scratch team hoped to bring the same experience of the desktop version of Scratch to the tablet, preserving the low floors, wide walls, and high ceilings.
+
+\section{Motivation}
+
+One of the main complications of bringing the Desktop Scratch experience to the tablet is that people do not interact with their tablets in the same way that they interact with their desktop computers. The most salient difference in these interactions is that people use a mouse and keyboard to manipulate desktop programs, while they use touch controls to interact with tablet applications.
+
+As a result of lacking a mouse and keyboard, tablet Scratch users will use multi-touch controls not only to create their projects, but as a main means of interaction with their projects as well. However, while the current Desktop Scratch block library has many blocks to help add mouse and keyboard interactivity, it lacks any blocks to allow multi-touch. Consequently, a multi-touch interaction set must be designed for Tablet Scratch in order to allow Tablet Scratchers to create multi-touch interactive projects.
+
+While it is tempting to think that the mouse blocks in Scratch can be directly translated into multi-touch blocks in Tablet Scratch, there are two main differences that make multi-touch interactions necessarily more complex than mouse inputs. The first difference is that on desktop computers people interact with only one mouse, while people with tablets often interact with multiple fingers. The second is that the mouse cursor on a desktop is always present (meaning the mouse's state can be persistently tracked), while touches are only present on a tablet when the fingers are pressed down (meaning that individual touch states are ephemeral).
+
+The currently standard systems of coding multi-touch interactivity are far too unintuitive and complex for the purposes of Scratch. Although there have been several attempts to simplify implementing multi-touch interactivity, none so far have been successful in simultaneously keeping the floor low enough and ceiling high enough for Scratch's standards. Therefore, it is necessary, and also the premise of this thesis, to design and evaluate a variety of archetypal approaches to creating the multi-touch interaction set for the forthcoming tablet version of Scratch.
+
+\section{Thesis Overview}
+In this thesis I will describe several potential designs for Tablet Scratch's multi-touch interaction set and analyze their respective merits and faults. In Chapter 2, I will analyze previous work in the field of programing multi-touch interactions, provide background on the Scratch programming language, and specify the goals for Tablet Scratch's multi-touch interaction set. In Chapter 3, I will describe an assortment of case study projects with which I will evaluate the interaction set designs. Next, in Chapter 4, I will describe several multi-touch interaction set designs and analyze them based on Scratch's design principles. Finally, in Chapter 5, I will present conclusions and outline future work possibilities.
 
 
