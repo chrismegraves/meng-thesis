@@ -5,7 +5,7 @@ Multi-touch tablets give users the ability to have as many pointers as they have
 
 In this chapter I will first discuss and categorize related work in the field of multi-touch interface development. Second, I will provide background on the Scratch programming language. Finally, I will present the goals we have specifically for Tablet Scratch's multi-touch interaction set.
  
-\section{Related Work}
+\section{Multi-Touch Interfaces}
 There are several tablet programming environments currently available that allow developers to create projects with multi-touch interactivity. However, they all fall into two general categories which directly conflict with our goals. The first category consists of tablet programming environments which are not sufficiently accessible to novices, i.e., have a floor that is too high. The second category consists of tablet programming environments which do not provide enough functionality to allow experienced programmers to pursue more complicated ambitions, i.e., have a ceiling that is too low. 
 
 \subsection{Floor Too High}
@@ -48,13 +48,13 @@ In order to achieve low floors, wide walls, and high ceilings, the Scratch progr
 
 \subsection{Block Syntax}
 
-Scratch's simplicity begins with its elegant minimalistic block syntax. All Scratch scripts are created solely by connecting blocks like puzzle pieces. Each block belongs to one of only five different block types (\emph{function}, \emph{command}, \emph{control structure}, \emph{trigger}, and \emph{definition}) and is appropriately shaped to suggest how it can be used \cite{Maloney}.
+Scratch's simplicity begins with its elegant minimalistic block syntax. All Scratch scripts are created solely by connecting blocks like puzzle pieces. Each block belongs to one of only five different block types (\emph{command}, \emph{function}, \emph{control structure}, \emph{trigger}, and \emph{definition}) and is appropriately shaped to suggest how it can be used \cite{Maloney}.
 
-We can think of \emph{function} blocks as being values. These values can be straightforward like ``mouse down?" or more complex, like the the sum of two other function blocks. Unlike other blocks, function blocks have no notches or bumps and thus cannot be stacked on top of each other. Function blocks are either rounded or hexagonal to signify their type. Rounded function blocks can be either strings or numbers, depending on context, while hexagonal blocks are Booleans. 
+To begin, \emph{command} blocks can be thought of simply as action instructions that can vary from``move 10 steps" to ``set video transparency to 50\%". They generally have a notch on top and a corresponding bump on the bottom so they can be stacked on top of each other to form a set of instructions, appropriately called a \emph{stack}. Once a particular stack is initiated, the command blocks in the stack are actuated in order from top to bottom (as users would naturally assume).
+
+Meanwhile, we can think of \emph{function} blocks as being values. These values can be straightforward like ``mouse down?" or more complex, like the the sum of two other function blocks. Unlike other blocks, function blocks have no notches or bumps and thus cannot be stacked on top of each other. Function blocks are either rounded or hexagonal to signify their type. Rounded function blocks can be either strings or numbers, depending on context, while hexagonal blocks are Booleans. 
 
 Many blocks, of all types, have customizable inputs or \emph{parameter slots}. Parameter slots come in different shapes specifying the types they accept. For example, rounded parameter slots with white backgrounds can be filled in either by the user typing in the values or by inserting a rounded function block. On the other hand, colored hexagonal parameter slots can only take in hexagonal function blocks. Since many function blocks can take in parameters that they themselves can fill, it is possible to recursively nest them as many times as desired. These shape specifications make it clear to the user how the blocks can be arranged and prevent users from connecting blocks in a way that is meaningless.
-
-Meanwhile, \emph{command} blocks can be thought of simply as action instructions that can vary from``move 10 steps" to ``set video transparency to 50\%". They generally have a notch on top and a corresponding bump on the bottom so they can be stacked on top of each other to form a set of instructions, appropriately called a \emph{stack}. Once a particular stack is initiated, the command blocks in the stack are actuated in order from top to bottom ()as users would naturally assume).  
 
 Next, a \emph{control structure} block can be thought of as a command block that takes in stacks of other command blocks and executes them according to some logic. For example, there are ``if \emph{boolean function block} then" command blocks that when called only execute the nested command stack if the given \emph{boolean function block} is true. Control structure blocks are ``C" and ``E" shaped with appropriate notches and bumps that make it clear how to nest stacks within them.
 
