@@ -11,7 +11,15 @@ Since the early 1900s, children all over the world have been expressing themselv
 It is worth restating that it is of paramount importance that the multi-touch interaction set be designed with a low floor in mind. Novice Tablet Scratchers must be able to easily figure out how to use the multi-touch interaction set to create simple projects that are responsive to touch. If beginners are able to create simple touch interactions without much difficulty, their early success will encourage them to augment their touch interactions and continue tinkering with their projects. Otherwise, if the process of creating simple touch-interactive projects is painful, many beginners will become frustrated and will forgo improving their projects. Here I specify two examples of basic projects that new Scratchers should be able to create without much assistance or hardship.
 
 \subsection{Basic One-Player Pong}
-The simplest form of Pong consists of a single paddle and a ball, which moves around the \emph{stage} (i.e., the background of a Scratch project) at a constant speed, rebounding whenever it hits either the paddle or a wall. The paddle has a fixed y-coordinate (and thus cannot be moved up or down), but can be moved left and right. To begin any Pong project, one must first implement this basic functionality.
+The simplest form of Pong consists of a single paddle and a ball, which moves around the \emph{stage} (i.e., the background of a Scratch project) at a constant speed, rebounding whenever it hits either the paddle or a wall (Figure \ref{OnePlayerPong}). The paddle has a fixed y-coordinate (and thus cannot be moved up or down), but can be moved left and right. To begin any Pong project, one must first implement this basic functionality.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{images/OnePlayerPong.PNG}
+\caption[One-Player Pong Screenshot]
+{Here is a screenshot from a one-player Pong game.}
+\label{OnePlayerPong}
+\end{figure}
 
 This single-player form of Pong has for a long time been one of the example starter projects in Desktop Scratch. In the starter project, the x-coordinate of the paddle is simply mapped to that of the mouse cursor. Therefore, users control the paddle by moving the mouse left and right. Note that in this case, the mouse controls the movement of the paddle regardless of whether or not the mouse cursor is hovering over the paddle. Unfortunately, we cannot use this control scheme for a Tablet Scratch project, since tablets do not have mice.
 
@@ -20,7 +28,15 @@ For this case project, I will specify an analogous touch control scheme for tabl
 The purpose of this case project is to test how easily novice Scratchers can create a single-finger touch interaction that relies on extracting coordinate information from a touch (in this case the x-coordinate) using the various multi-touch interaction sets. As a result, it will be assumed for this project that the user never presses two or more fingers on the tablet at the same time and I will leave it unspecified how the implementations of this project should handle simultaneous touches.
 
 \subsection{One-Finger Painting}
-In the same way that one-player Pong is the simplest form of interactive Pong, a one-finger painting project is the most basic form of a finger-painting application. At its simplest, a one-finger painting application starts with a blank stage and paints an arbitrary color wherever the user touches the screen with one finger at a time. Again, it will be assumed for this project that the user will not touch the screen with more than one finger at a time, so I will leave it unspecified how implementations should handle cases when the assumption is broken.
+In the same way that one-player Pong is the simplest form of interactive Pong, a one-finger painting project is the most basic form of a finger-painting application. At its simplest, a one-finger painting application starts with a blank stage and paints an arbitrary color wherever the user touches the screen with one finger at a time (Figure \ref{OneFingerPainting}). Again, it will be assumed for this project that the user will not touch the screen with more than one finger at a time, so I will leave it unspecified how implementations should handle cases when the assumption is broken.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{images/OneFingerPainting.PNG}
+\caption[One-Finger Painting Screenshot]
+{Here is a sample painting made using a one-finger painting project.}
+\label{OneFingerPainting}
+\end{figure}
 
 In Desktop Scratch, an analogue of this project can be created easily by using a \emph{pen}. As an homage to its predecessor, Logo, each sprite in Scratch carries a pen, which, when placed down, traces the movement of the sprite onto the stage. Consequently, a Scratcher would begin a ``mouse painting'' project in Desktop Scratch by first creating a ``paint-brush" sprite that follows the mouse cursor wherever it goes. Next, the Scratcher would program the paint-brush sprite's pen to start in the up position, but go down only when the mouse clicks down (meaning the pen only traces the movement of the mouse when the mouse is clicked down).
 
@@ -32,14 +48,30 @@ At its core, this project is a simple exercise of recognizing and handling when 
 As Tablet Scratchers gain experience, they will naturally want to augment their simpler projects to develop progressively more complex ones. In addition to being intrinsically rewarding, the process of building upon earlier projects is a fundamental part of constructionist learning. Therefore, the ideal multi-touch interaction set must be designed so that as Tablet Scratchers master the basics of simple touch interactions, they can continue playing and figure out how to make more complex ones. If, on the other hand, the multi-touch interaction set is designed such that touch interactions more complex than the low floor cases are terribly difficult to achieve, then Tablet Scratchers would be stuck developing simple touch interactions and thus robbed of a learning opportunity. Here I present two natural augmentations an experienced Tablet Scratcher might want (and should be able) to add to the two previously described low floor cases. 
 
 \subsection{Basic Two-Player Pong}
-After a Tablet Scratcher successfully creates a simple one-player Pong project, the logical next step is to add a second player. For this case project, we again have a ball which moves around the stage with a constant speed, rebounding when it either hits a wall or a paddle. However, instead of one paddle with a fixed y-coordinate that moves only left and right, there are now, on either side of the stage, two paddles with fixed x-coordinates that move only up and down. Note that unlike in the one-player Pong project, this interaction cannot be developed in Desktop Scratch due to being limited to a single mouse.
+After a Tablet Scratcher successfully creates a simple one-player Pong project, the logical next step is to add a second player. For this case project, we again have a ball which moves around the stage with a constant speed, rebounding when it either hits a wall or a paddle. However, instead of one paddle with a fixed y-coordinate that moves only left and right, there are now, on either side of the stage, two paddles with fixed x-coordinates that move only up and down (Figure \ref{TwoPlayerPong}). Note that unlike in the one-player Pong project, this interaction cannot be developed in Desktop Scratch due to being limited to a single mouse.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{images/TwoPlayerPong.PNG}
+\caption[Two-Player Pong Screenshot]
+{Here is a screenshot from a two-player Pong game.}
+\label{TwoPlayerPong}
+\end{figure}
 
 Clearly the controls from the one-player Pong project will not work in this case, because there could only be one touch at a time and that touch would control both paddles. For this case, I will assume that the paddles only follow the y-coordinate of a touch if the location of the touch is within a defined control range of the paddle and that the control range is small enough that no touch can simultaneously control both paddles. To make things simpler, it will be assumed that there are never more than two simultaneous touches and there is at most one touch at a time within either paddle's control range. 
 
 The purpose of this case project is to compare the relative ease of using the various multi-touch interaction set designs to develop projects that require multiple sprites to respond to the touches that are closest to them. Without this functionality, many (even simple) multi-finger interactions will be impossible to develop. Although the capability for sprites to respond to all touches on the screen is obviously more powerful, an extensive range of the most common multi-touch interactions can be developed when the sprites' ability to respond to touches is limited to the ones that are closest to them.
 
 \subsection{Two-Finger Painting}
-Similar to how two-player Pong is the natural next step after one-player Pong, two-finger painting is the natural next step after one-finger painting. In two-finger painting, the user is able to draw on the stage with two fingers simultaneously instead of being limited to just one finger at a time. Again for simplicity, it will be assumed that the user never has more than two fingers simultaneously pressed on the tablet. Also note that, again, this kind of interaction cannot be developed for a single mouse in Desktop Scratch.
+Similar to how two-player Pong is the natural next step after one-player Pong, two-finger painting is the natural next step after one-finger painting. In two-finger painting, the user is able to draw on the stage with two fingers simultaneously instead of being limited to just one finger at a time (Figure \ref{TwoFingerPainting}). Again for simplicity, it will be assumed that the user never has more than two fingers simultaneously pressed on the tablet. Also note that, again, this kind of interaction cannot be developed for a single mouse in Desktop Scratch.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{images/TwoFingerPainting.PNG}
+\caption[Two-Finger Painting Screenshot]
+{Here is a sample painting made using a two-finger painting project.}
+\label{TwoFingerPainting}
+\end{figure}
 
 This appended functionality adds a significant amount of complexity to the project. Now instead of having just one paint-brush sprite, there necessarily must be two paint-brush sprites to follow the up-to-two fingers pressed on the tablet. Moreover, when two fingers are being pressed at the same time, these two paint-brush sprites must be able to distribute themselves amongst the fingers, so that both fingers have a following paint-brush sprite. 
 
@@ -55,7 +87,15 @@ For this case project, a player will bump their paddle each time a second touch 
 
 At the core of this interaction is the capacity for sprites to recognize and handle not only the touch closest to them, but also all subsequent nearby touches. Although this interaction feels natural for this particular project case, it is very specific and unconventional. The ability to design and implement complex, multi-touch gestures adds a powerful means of personalizing Tablet Scratch projects. Hence, the ideal multi-touch interaction set design will make it possible to develop complex multi-touch controls like the one exhibited in this project.
 
-\subsection{Ten Finger Painting}
-The next step for the finger-painting project after adding support for a second finger, is to add support for even more fingers. Since many Android devices can recognize up to ten simultaneous touches (not to mention that only a few people have more than ten fingers) this case project will be a finger painting application that supports up to ten simultaneous finger touches. Many expert Tablet Scratchers will naturally try to make projects that allow users to deploy as many fingers as possible. Thus, the purpose of this case project is to test how well the multi-touch interaction sets make it possible to handle a large number of simultaneous touches. 
+\subsection{Ten-Finger Painting}
+The next step for the finger-painting project after adding support for a second finger, is to add support for even more fingers. Since many Android devices can recognize up to ten simultaneous touches (not to mention that only a few people have more than ten fingers) this case project will be a finger painting application that supports up to ten simultaneous finger touches (Figure \ref{TenFingerPainting}). Many expert Tablet Scratchers will naturally try to make projects that allow users to deploy as many fingers as possible. Thus, the purpose of this case project is to test how well the multi-touch interaction sets make it possible to handle a large number of simultaneous touches. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{images/TenFingerPainting.PNG}
+\caption[Ten-Finger Painting Screenshot]
+{Here is a sample painting made using a ten-finger painting project.}
+\label{TenFingerPainting}
+\end{figure}
 
 Notice that the problems for this project are essentially the same as those regarding the two-finger painting project, but scaled by a factor of five. While the similarities might make this case project appear redundant, certain multi-touch interaction set designs make it easy to handle one or two fingers but terribly difficult to handle even a few more fingers. Meanwhile, other multi-touch interaction set designs make it a little challenging to handle one or two fingers, but not any more challenging to handle ten. I will discuss these trade-offs in the following three chapter as I introduce and analyze a selection of multi-touch interaction set designs.
